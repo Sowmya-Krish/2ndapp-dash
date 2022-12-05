@@ -28,4 +28,24 @@ body{
 .summary-box-time-container>p{
   color : hsl(214deg 17% 65%)
 }
+.summary-box-spec {
+  display : flex;
+  justify-content: space-between;
+}
+.summary-box-list{
+  display : grid;
+  grid-template-columns: 1fr;
+  gap : 24px; 
+}
+@media(min-width: 500px){
+  .summary-box-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media(min-width: 1200px){
+  .summary-box-list {
+    grid-template-columns: repeat(4,1fr);
+  }
+}
+
 
