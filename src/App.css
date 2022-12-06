@@ -4,10 +4,10 @@
   --text-secondary-color:hsl(214deg 17% 65%);
 --root-gap : 8px;
 --fw-500 : 500;
---purple : rgb(135, 96, 251);
+--purple : hsl(255, 95%, 68%);
 --orange : #eb6f33;
 --green :#03c895; 
---blue : #01b8ff;
+--blue : hsl(197, 100%, 50%);
 }
 
 body{
@@ -15,7 +15,7 @@ body{
   padding : 24px;
   font-family: "Roboto", sans-serif;
 }
-.summary-box-container , .profit-box-container {
+.summary-box-container , .profit-box-container, .overview-container{
   background: var(--bg-white);
  padding: 16px; 
 }
