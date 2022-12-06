@@ -14,6 +14,9 @@ import Box from "@mui/material/Box";
 import LinearProgress, {
   linearProgressClasses,
 } from "@mui/material/LinearProgress";
+import { StackChart } from "./StackChart";
+import { ToggleButtonOverview } from "./Togglebutton";
+import { useState } from "react";
 
 function App() {
   return (
@@ -28,6 +31,7 @@ function Dashboard() {
       <h1>Welcome to Dashboard😍</h1>
       <SummaryBoxList />
       <MonthlyProfits />
+      <Overview />
       {/* <SummaryBox /> */}
     </div>
   );
@@ -41,6 +45,32 @@ const CustomLinearProgress = styled(LinearProgress)(({ theme, lineColor }) => ({
     backgroundColor: lineColor,
   },
 }));
+
+function Overview() {
+  const monthLabels = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+  ];
+  const yearLabels = ["2013", "2014", "2015", "2016", "2017", "2018", "2019"];
+  //lifting the state up
+  const [time, setTime] = useState("month");
+
+  return (
+    <div className="overview-container">
+      <div className="overview-spec">
+        <h4 className="profit-box-heading">Overview of sales</h4>
+        <p className="profit-box-sub-text">Conapred to last month</p>
+        <ToggleButtonOverview time={time} setTime={setTime} />
+      </div>
+      <StackChart labels={time == "month" ? monthLabels : yearLabels} />
+    </div>
+  );
+}
 function SummaryBoxList() {
   const dataList = [
     {
